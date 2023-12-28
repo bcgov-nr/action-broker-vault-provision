@@ -1,0 +1,33 @@
+name: NR Broker vault token revoke action
+description: Revokes a vault token.
+branding:
+  icon: package
+  color: blue
+
+inputs:
+  action_token:
+    description: The token of the action containing the service to use to login as
+    required: true
+  broker_url:
+    default: https://nr-broker.apps.silver.devops.gov.bc.ca
+    description: The broker url.
+  role_id:
+    description: The service's application role id in vault. Setting this is recommended to avoid environment mismatch.
+    required: true
+  vault_url:
+    default: https://knox.io.nrs.gov.bc.ca
+    description: The vault url.
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+    - id: vault-token-revoke
+      shell: bash
+      env:
+        ACTION_TOKEN: ${{ inputs.action_token }}
+        BROKER_URL: ${{ inputs.broker_url }}
+        PROVISION_ROLE_ID: ${{ inputs.role_id }}
+        VAULT_URL: ${{ inputs.vault_url }}
+      run: vault-provision.sh
