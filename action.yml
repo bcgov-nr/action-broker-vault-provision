@@ -1,5 +1,5 @@
-name: NR Broker vault token revoke action
-description: Revokes a vault token.
+name: NR Broker Vault provision action
+description: Provision Vault access for a service.
 branding:
   icon: package
   color: blue
