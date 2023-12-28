@@ -6,13 +6,13 @@ This action is provided to illustrate how to call the Broker API. The [Vault Log
 
 ## Vault Login or Vault Provision
 
-This action creates an AppRole secret which can be used to login and create a Vault token that can be renewed. This is required if you want your service to have continous access to a database protected by a dynamic (rotated) secret (See: [Vault database engine](https://developer.hashicorp.com/vault/docs/secrets/databases)). Otherwise, you would only be able to start a service that could access the database using that dynamic secret for the duration of the intention.
+This action creates an AppRole secret which can be used to login and create a Vault token that can be renewed. This is required if you want your service to have continuous access to a database protected by a dynamic (rotated) secret (See: [Vault database engine](https://developer.hashicorp.com/vault/docs/secrets/databases)). Otherwise, you would only be able to start a service that could access the database using that dynamic secret for the duration of the intention.
 
 Each invocation of this action should, at most, provision a single instance of a service. How a service is provisioned should not create a scenario where its token outlives the service instance. If multiple service instances are provisioned with the same token from a single invocation, an immortal shared token (if each individual service renews the same token) is created. Secure token renewal depends on the token expiring (relatively) quickly once a service instance is stopped.
 
 In almost all situations, a GitHub Action should be using the [Vault Login Action](https://github.com/bcgov-nr/action-broker-vault-login) instead.
 
-# Broker Documention
+# Broker Documentation
 
 Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker) for full usage details.
 
