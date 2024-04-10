@@ -1,4 +1,4 @@
-# Broker Action Vault Provision V1
+# Broker Action Vault Provision V2
 
 This action calls the Broker API to provision a secret for use by an application to login to Vault together with the service's role id. See: [Vault API - Login with AppRole](https://developer.hashicorp.com/vault/api-docs/auth/approle#login-with-approle)
 
@@ -20,7 +20,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 
 <!-- start usage -->
 ```yaml
-- uses: bcgov-nr/action-broker-vault-revoke@v1
+- uses: bcgov-nr/action-broker-vault-revoke@v2
   with:
     # The token of the action containing the service to use to login as
     action_token: ''
