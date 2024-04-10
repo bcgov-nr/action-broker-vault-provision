@@ -13,7 +13,6 @@ inputs:
     description: The broker url.
   role_id:
     description: The service's application role id in vault. Setting this is recommended to avoid environment mismatch.
-    required: true
   vault_url:
     default: https://knox.io.nrs.gov.bc.ca
     description: The vault url.
