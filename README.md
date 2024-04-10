@@ -1,6 +1,6 @@
 # Broker Action Vault Provision V1
 
-This action calls the Vault API to provision a secret for use by an application to login together with the service's role id. See: [Vault API - Login with AppRole](https://developer.hashicorp.com/vault/api-docs/auth/approle#login-with-approle)
+This action calls the Broker API to provision a secret for use by an application to login to Vault together with the service's role id. See: [Vault API - Login with AppRole](https://developer.hashicorp.com/vault/api-docs/auth/approle#login-with-approle)
 
 This action is provided to illustrate how to call the Broker API. The [Vault Login Action](https://github.com/bcgov-nr/action-broker-vault-login) may be a better choice.
 
