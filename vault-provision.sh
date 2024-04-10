@@ -2,10 +2,17 @@
 
 echo "===> Vault provision"
 # Get wrapped secret id
-WRAPPED_VAULT_TOKEN_JSON=$(curl -s -X POST $BROKER_URL/v1/provision/approle/secret-id \
+if [[ -z "${PROVISION_ROLE_ID}" ]]; then
+  WRAPPED_VAULT_TOKEN_JSON=$(curl -s -X POST $BROKER_URL/v1/provision/approle/secret-id \
     -H 'X-Broker-Token: '"$ACTION_TOKEN"'' \
     -H 'X-Vault-Role-Id: '"$PROVISION_ROLE_ID"'' \
-)
+  )
+else
+  WRAPPED_VAULT_TOKEN_JSON=$(curl -s -X POST $BROKER_URL/v1/provision/approle/secret-id \
+    -H 'X-Broker-Token: '"$ACTION_TOKEN"'' \
+  )
+fi
+
 if [ "$(echo $WRAPPED_VAULT_TOKEN_JSON | jq '.error')" != "null" ]; then
     echo "Exit: Error detected"
     echo $WRAPPED_VAULT_TOKEN_JSON | jq '.'

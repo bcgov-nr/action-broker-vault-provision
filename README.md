@@ -1,6 +1,6 @@
 # Broker Action Vault Provision V1
 
-This action calls the Vault API to provision a secret for use by an application to login together with the service's role id. See: [Vault API - Login with AppRole](https://developer.hashicorp.com/vault/api-docs/auth/approle#login-with-approle)
+This action calls the Broker API to provision a secret for use by an application to login to Vault together with the service's role id. See: [Vault API - Login with AppRole](https://developer.hashicorp.com/vault/api-docs/auth/approle#login-with-approle)
 
 This action is provided to illustrate how to call the Broker API. The [Vault Login Action](https://github.com/bcgov-nr/action-broker-vault-login) may be a better choice.
 
@@ -26,7 +26,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
     action_token: ''
 
     # The broker url.
-    # Default: 'https://nr-broker.apps.silver.devops.gov.bc.ca'
+    # Default: 'https://broker.io.nrs.gov.bc.ca'
     broker_url: ''
 
     # The service's application role id in vault. Setting this is recommended to avoid environment mismatch.
