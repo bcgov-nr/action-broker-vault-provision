@@ -14,7 +14,7 @@ In almost all situations, a GitHub Action should be using the [Vault Login Actio
 
 # Broker Documentation
 
-Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker) for full usage details.
+Please refer to the [NR Broker Repository](https://github.com/bcgov/nr-broker) for full usage details.
 
 # Usage
 
